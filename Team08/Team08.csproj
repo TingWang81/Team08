@@ -59,6 +59,7 @@
       <DependentUpon>CheckWindows.cs</DependentUpon>
     </Compile>
     <Compile Include="Controller.cs" />
+    <Compile Include="IPersonRepository.cs" />
     <Compile Include="ManagementWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +74,7 @@
     <Compile Include="Models\ShipType.cs" />
     <Compile Include="Models\SolarSystem.cs" />
     <Compile Include="Models\SpaceShip.cs" />
+    <Compile Include="SqlPersonRepository.cs" />
     <Compile Include="StartWindows.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,5 +115,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="Sql\Procedures\SpaceFlight.GetPerson.sql" />
+    <Content Include="Sql\Tables\SpaceFlight.Person.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

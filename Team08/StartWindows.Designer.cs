@@ -35,7 +35,6 @@
             // 
             // uxTimer
             // 
-            this.uxTimer.Tick += new System.EventHandler(this.uxTimer_Tick);
             // 
             // management_button
             // 
@@ -46,6 +45,7 @@
             this.management_button.TabIndex = 0;
             this.management_button.Text = "Managers Window";
             this.management_button.UseVisualStyleBackColor = true;
+            this.management_button.Click += new System.EventHandler(this.management_button_Click);
             // 
             // StartWindows
             // 
@@ -55,8 +55,6 @@
             this.Controls.Add(this.management_button);
             this.Name = "StartWindows";
             this.Text = "Solar Flights";
-            this.Load += new System.EventHandler(this.StartWindows_Load);
-            this.Click += new System.EventHandler(this.StartWindows_Load);
             this.ResumeLayout(false);
 
         }
