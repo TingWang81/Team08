@@ -22,7 +22,7 @@ namespace Team08
         private void uxBack_Check_Click(object sender, EventArgs e)
         {
             this.Hide();
-            StartWindows start = new StartWindows();
+            StartWindows start = new StartWindows(new Controller());
             start.ShowDialog();
             this.Close();
             

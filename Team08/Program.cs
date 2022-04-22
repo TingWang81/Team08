@@ -14,9 +14,11 @@ namespace Team08
         [STAThread]
         static void Main()
         {
+            Controller controllerClass = new Controller();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StartWindows());
+            Application.Run(new StartWindows(controllerClass));
         }
     }
 }

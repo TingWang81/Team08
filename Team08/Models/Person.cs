@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Team08.Models
 {
-    class Person
+    public class Person
     {
         public int PersonID;
         public string FirstName;
