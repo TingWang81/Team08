@@ -37,6 +37,25 @@ namespace Team08
             }
         }
 
+        //public List<Person> RankPersonsByDistance()
+        //{
+        //    using (var connection = new SqlConnection(connectionString))
+        //    {
+        //        using (var command = new SqlCommand("SpaceFlight.RankPersonsByDistance", connection))
+        //        {
+        //            command.CommandType = CommandType.StoredProcedure;
+
+        //            command.Parameters.AddWithValue("LastName", lastName);
+        //            command.Parameters.AddWithValue("FirstName", firstName);
+
+        //            connection.Open();
+
+        //            using (var reader = command.ExecuteReader())
+        //                return TranslatePerson(reader);
+        //        }
+        //    }
+        //}
+
         private Person TranslatePerson(SqlDataReader reader)
         {
             var personIdOrdinal = reader.GetOrdinal("PersonId");

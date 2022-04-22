@@ -23,5 +23,10 @@ namespace Team08
         {
             return this.personRepo.GetPerson(lastName, firstName);
         }
+
+        //public List<Person> RankPersonsByDistance()
+        //{
+
+        //}
     }
 }

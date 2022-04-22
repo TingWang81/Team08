@@ -35,5 +35,10 @@ namespace Team08
                 p.EmailAddress
                 );
         }
+
+        private void rankCustByDistanceBtn_Click(object sender, EventArgs e)
+        {
+            //List < Person > this.controllerClass
+        }
     }
 }

@@ -49,7 +49,7 @@
             this.custNameSearchBox.Location = new System.Drawing.Point(23, 21);
             this.custNameSearchBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.custNameSearchBox.Name = "custNameSearchBox";
-            this.custNameSearchBox.Size = new System.Drawing.Size(481, 35);
+            this.custNameSearchBox.Size = new System.Drawing.Size(481, 30);
             this.custNameSearchBox.TabIndex = 1;
             this.custNameSearchBox.Text = "Cust. LastName FirstName";
             // 
@@ -60,7 +60,7 @@
             this.shipSearchBox.Location = new System.Drawing.Point(614, 21);
             this.shipSearchBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.shipSearchBox.Name = "shipSearchBox";
-            this.shipSearchBox.Size = new System.Drawing.Size(481, 35);
+            this.shipSearchBox.Size = new System.Drawing.Size(481, 30);
             this.shipSearchBox.TabIndex = 3;
             this.shipSearchBox.Text = "Ship Name";
             // 
@@ -71,7 +71,7 @@
             this.planetNameSearchBox.Location = new System.Drawing.Point(1213, 21);
             this.planetNameSearchBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.planetNameSearchBox.Name = "planetNameSearchBox";
-            this.planetNameSearchBox.Size = new System.Drawing.Size(481, 35);
+            this.planetNameSearchBox.Size = new System.Drawing.Size(481, 30);
             this.planetNameSearchBox.TabIndex = 5;
             this.planetNameSearchBox.Text = "Planet Name";
             // 
@@ -130,6 +130,7 @@
             this.rankCustByDistanceBtn.TabIndex = 10;
             this.rankCustByDistanceBtn.Text = "Customers By Distance";
             this.rankCustByDistanceBtn.UseVisualStyleBackColor = true;
+            this.rankCustByDistanceBtn.Click += new System.EventHandler(this.rankCustByDistanceBtn_Click);
             // 
             // rankDestPlanetsBtn
             // 
@@ -157,7 +158,7 @@
             this.rankLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rankLabel.Location = new System.Drawing.Point(28, 221);
             this.rankLabel.Name = "rankLabel";
-            this.rankLabel.Size = new System.Drawing.Size(191, 37);
+            this.rankLabel.Size = new System.Drawing.Size(163, 31);
             this.rankLabel.TabIndex = 13;
             this.rankLabel.Text = "Quick Rank:";
             // 
