@@ -15,13 +15,18 @@ namespace Team08
 
         public Controller()
         {
-            this.connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=CIS560;";
+            this.connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=master;";
             this.personRepo = new SqlPersonRepository(this.connectionString);
         }
 
         public Person GetPerson(string lastName, string firstName)
         {
             return this.personRepo.GetPerson(lastName, firstName);
+        }
+
+        public SpaceShip GetShip(string Name)
+        {
+            return this.personRepo.GetShip(Name);
         }
     }
 }

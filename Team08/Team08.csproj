@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="IPersonRepository.cs" />
+    <Compile Include="IShipRepository.cs" />
     <Compile Include="ManagementWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +76,8 @@
     <Compile Include="Models\SolarSystem.cs" />
     <Compile Include="Models\SpaceShip.cs" />
     <Compile Include="SqlPersonRepository.cs" />
+    <Content Include="Sql\Procedures\SpaceFlight.GetShip.sql" />
+    <Content Include="Sql\Tables\SpaceFlight.SpaceShip.sql" />
     <Compile Include="StartWindows.cs">
       <SubType>Form</SubType>
     </Compile>

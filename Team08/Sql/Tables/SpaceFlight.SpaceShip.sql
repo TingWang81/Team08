@@ -1,4 +1,4 @@
-USE CIS560
+﻿USE CIS560
 GO
 
 CREATE TABLE SpaceObject.SpaceShip
