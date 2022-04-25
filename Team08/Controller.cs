@@ -26,13 +26,6 @@ namespace Team08
         {
             return this.personRepo.GetPerson(lastName, firstName);
         }
-
-<<<<<<< HEAD
-        //public List<Person> RankPersonsByDistance()
-        //{
-
-        //}
-=======
         public SpaceShip GetSpaceShip(string name)
         {
             return this.spaceshipRepo.GetSpaceShip(name);
@@ -41,6 +34,5 @@ namespace Team08
         {
             return this.planetRepo.GetPlanet(name);
         }
->>>>>>> 8be9f027d5fef8841cc3493d90aaf69e0c2d7fc6
     }
 }
