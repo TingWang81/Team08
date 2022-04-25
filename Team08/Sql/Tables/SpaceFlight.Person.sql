@@ -1,10 +1,14 @@
-USE CIS560
+USE master
 GO
 
-CREATE TABLE SpaceObject.SpaceShip
+CREATE TABLE SpaceFlight.Person
 (
-    ShipID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY,
-    ShipName NVARCHAR(64) NOT NULL UNIQUE,
-    ShipTypeID INT NOT NULL FOREIGN KEY
-        REFERENCES SpaceObject.ShipType(ShipTypeID),
+
+    PersonID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY,
+    FirstName NVARCHAR(64) NOT NULL,
+    LastName NVARCHAR(64) NOT NULL,
+	EmailAddress NVARCHAR(128) NOT NULL,
+    
+    UNIQUE(EmailAddress),
+    
 );

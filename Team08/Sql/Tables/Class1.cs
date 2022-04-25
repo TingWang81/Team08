@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Team08.Models;
 
-namespace Team08
+namespace Team08.Sql.Tables
 {
-    public interface IShipRepository
+    class Class1
     {
-        SpaceShip GetSpaceShip(string name);
     }
 }

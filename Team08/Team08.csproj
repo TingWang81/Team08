@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="IPersonRepository.cs" />
+    <Compile Include="IPlanetRepository.cs" />
     <Compile Include="IShipRepository.cs" />
     <Compile Include="ManagementWindow.cs">
       <SubType>Form</SubType>
@@ -76,8 +77,15 @@
     <Compile Include="Models\SolarSystem.cs" />
     <Compile Include="Models\SpaceShip.cs" />
     <Compile Include="SqlPersonRepository.cs" />
-    <Content Include="Sql\Procedures\SpaceFlight.GetShip.sql" />
+    <None Include="Resources\photo-1465101162946-4377e57745c3.jfif" />
+    <Content Include="image\001.jfif" />
+    <Content Include="image\02.jpg" />
+    <Content Include="Sql\Procedures\SpaceFlight.GetPlanet.sql" />
+    <Content Include="Sql\Procedures\SpaceFlight.GetSpaceShip.sql" />
+    <Content Include="Sql\Tables\SpaceFlight.Planet.sql" />
     <Content Include="Sql\Tables\SpaceFlight.SpaceShip.sql" />
+    <Compile Include="SqlPlanetRepository.cs" />
+    <Compile Include="SqlShipRepository.cs" />
     <Compile Include="StartWindows.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +108,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="StartWindows.resx">
       <DependentUpon>StartWindows.cs</DependentUpon>

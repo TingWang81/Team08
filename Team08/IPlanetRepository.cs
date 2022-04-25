@@ -7,8 +7,8 @@ using Team08.Models;
 
 namespace Team08
 {
-    public interface IShipRepository
+    public interface IPlanetRepository
     {
-        SpaceShip GetSpaceShip(string name);
+        Planet GetPlanet(string name);
     }
 }

@@ -12,11 +12,14 @@ namespace Team08
     {
         string connectionString;
         IPersonRepository personRepo;
-
+        IShipRepository spaceshipRepo;
+        IPlanetRepository planetRepo;
         public Controller()
         {
             this.connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=master;";
             this.personRepo = new SqlPersonRepository(this.connectionString);
+            this.spaceshipRepo = new SqlShipRepository(this.connectionString);
+            this.planetRepo = new SqlPlanetRepository(this.connectionString);
         }
 
         public Person GetPerson(string lastName, string firstName)
@@ -24,9 +27,13 @@ namespace Team08
             return this.personRepo.GetPerson(lastName, firstName);
         }
 
-        public SpaceShip GetShip(string Name)
+        public SpaceShip GetSpaceShip(string name)
         {
-            return this.personRepo.GetShip(Name);
+            return this.spaceshipRepo.GetSpaceShip(name);
+        }
+        public Planet GetPlanet(string name)
+        {
+            return this.planetRepo.GetPlanet(name);
         }
     }
 }

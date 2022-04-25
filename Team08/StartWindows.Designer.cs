@@ -33,26 +33,27 @@
             this.management_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // uxTimer
-            // 
-            // 
             // management_button
             // 
+            this.management_button.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.management_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.management_button.Location = new System.Drawing.Point(38, 1008);
+            this.management_button.Location = new System.Drawing.Point(25, 655);
+            this.management_button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.management_button.Name = "management_button";
-            this.management_button.Size = new System.Drawing.Size(200, 100);
+            this.management_button.Size = new System.Drawing.Size(133, 65);
             this.management_button.TabIndex = 0;
             this.management_button.Text = "Managers Window";
-            this.management_button.UseVisualStyleBackColor = true;
+            this.management_button.UseVisualStyleBackColor = false;
             this.management_button.Click += new System.EventHandler(this.management_button_Click);
             // 
             // StartWindows
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1978, 1144);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1319, 744);
             this.Controls.Add(this.management_button);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "StartWindows";
             this.Text = "Solar Flights";
             this.ResumeLayout(false);
