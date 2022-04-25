@@ -1,12 +1,10 @@
-USE CIS560
-GO
-
 -- DROP TABLE IF EXISTS SpaceFlight.Planet;
 
 CREATE TABLE SpaceFlight.Planet
 (
     PlanetID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY,
     PlanetName NVARCHAR(64) NOT NULL UNIQUE,
+<<<<<<< HEAD
     Mass FLOAT NOT NULL,
     Radius FLOAT NOT NULL,
     XCoordinate FLOAT NOT NULL,

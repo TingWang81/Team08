@@ -6,27 +6,25 @@ using System.Threading.Tasks;
 
 namespace Team08.Models
 {
-    class Planet
+    public class Planet
     {
         public int PlanetID;
-        public int SolarSystemID;
         public string PlanetName;
-        public Double Mass;
-        public Double Radius;
-        public Double XCoordinate;
-        public Double YCoordinate;
-        public Double DistanceFromEarth;
+        public decimal Mass;
+        public decimal Radius;
+        public decimal EclipticCoordinate;
+        public decimal DistanceFromEarth;
+        public int SolarSystemID;
 
-        public Planet(int planetID, int solarSystemID, string planetName, double mass, double radius, double xCoordinate, double yCoordinate, double distanceFromEarth)
+        public Planet(int planetID, string planetName, decimal mass, decimal radius, decimal eclipticCoordinate, decimal distanceFromEarth,int solarSystemID)
         {
             PlanetID = planetID;
-            SolarSystemID = solarSystemID;
             PlanetName = planetName;
             Mass = mass;
             Radius = radius;
-            XCoordinate = xCoordinate;
-            YCoordinate = yCoordinate;
+            EclipticCoordinate = eclipticCoordinate;
             DistanceFromEarth = distanceFromEarth;
+            SolarSystemID = solarSystemID;
         }
     }
 }
