@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookingWindows.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BookingWindows.Designer.cs">
-      <DependentUpon>BookingWindows.cs</DependentUpon>
-    </Compile>
     <Compile Include="CheckWindows.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +56,7 @@
     <Compile Include="IFlightRepository.cs" />
     <Compile Include="IPersonRepository.cs" />
     <Compile Include="IPlanetRepository.cs" />
+    <Compile Include="IShipRepository.cs" />
     <Compile Include="ManagementWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +73,7 @@
     <Compile Include="Models\SpaceShip.cs" />
     <Compile Include="SqlPersonRepository.cs" />
     <Compile Include="SqlPlanetRepository.cs" />
+    <Compile Include="SqlShipRepository.cs" />
     <Compile Include="StartWindows.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,9 +82,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="BookingWindows.resx">
-      <DependentUpon>BookingWindows.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CheckWindows.resx">
       <DependentUpon>CheckWindows.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,13 +89,14 @@
       <DependentUpon>ManagementWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="StartWindows.resx">
       <DependentUpon>StartWindows.cs</DependentUpon>
@@ -122,6 +116,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="image\001.jpg" />
+    <Content Include="image\02.jpg" />
+    <Content Include="Resources\photo-1465101162946-4377e57745c3.jfif" />
     <Content Include="Sql\Procedures\SpaceFlight.GetPerson.sql" />
     <Content Include="Sql\Tables\SpaceFlight.Person.sql" />
   </ItemGroup>

@@ -50,11 +50,7 @@
             this.custNameSearchBox.Location = new System.Drawing.Point(17, 17);
             this.custNameSearchBox.Margin = new System.Windows.Forms.Padding(2);
             this.custNameSearchBox.Name = "custNameSearchBox";
-<<<<<<< HEAD
-            this.custNameSearchBox.Size = new System.Drawing.Size(481, 30);
-=======
             this.custNameSearchBox.Size = new System.Drawing.Size(362, 26);
->>>>>>> 8be9f027d5fef8841cc3493d90aaf69e0c2d7fc6
             this.custNameSearchBox.TabIndex = 1;
             this.custNameSearchBox.Text = "Cust. LastName FirstName";
             // 
@@ -65,11 +61,7 @@
             this.shipSearchBox.Location = new System.Drawing.Point(460, 17);
             this.shipSearchBox.Margin = new System.Windows.Forms.Padding(2);
             this.shipSearchBox.Name = "shipSearchBox";
-<<<<<<< HEAD
-            this.shipSearchBox.Size = new System.Drawing.Size(481, 30);
-=======
             this.shipSearchBox.Size = new System.Drawing.Size(362, 26);
->>>>>>> 8be9f027d5fef8841cc3493d90aaf69e0c2d7fc6
             this.shipSearchBox.TabIndex = 3;
             this.shipSearchBox.Text = "Ship Name";
             // 
@@ -80,11 +72,7 @@
             this.planetNameSearchBox.Location = new System.Drawing.Point(910, 17);
             this.planetNameSearchBox.Margin = new System.Windows.Forms.Padding(2);
             this.planetNameSearchBox.Name = "planetNameSearchBox";
-<<<<<<< HEAD
-            this.planetNameSearchBox.Size = new System.Drawing.Size(481, 30);
-=======
             this.planetNameSearchBox.Size = new System.Drawing.Size(362, 26);
->>>>>>> 8be9f027d5fef8841cc3493d90aaf69e0c2d7fc6
             this.planetNameSearchBox.TabIndex = 5;
             this.planetNameSearchBox.Text = "Planet Name";
             // 
@@ -177,11 +165,7 @@
             this.rankLabel.Location = new System.Drawing.Point(21, 180);
             this.rankLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.rankLabel.Name = "rankLabel";
-<<<<<<< HEAD
-            this.rankLabel.Size = new System.Drawing.Size(163, 31);
-=======
             this.rankLabel.Size = new System.Drawing.Size(131, 26);
->>>>>>> 8be9f027d5fef8841cc3493d90aaf69e0c2d7fc6
             this.rankLabel.TabIndex = 13;
             this.rankLabel.Text = "Quick Rank:";
             // 

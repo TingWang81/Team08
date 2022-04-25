@@ -19,7 +19,7 @@ namespace Team08
         {
             InitializeComponent();
             this.controllerClass = c;
-            this.BackgroundImage = Image.FromFile(@"C:\Users\ting8\Source\Repos\Team08\Team08\image\02.jpg");
+            this.BackgroundImage = Properties.Resources.ManagementWinPic;
         }
 
         private void backButton_Click(object sender, EventArgs e)

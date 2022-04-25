@@ -23,7 +23,7 @@ namespace Team08
         {
             InitializeComponent();
             this.controllerClass = c;
-            this.BackgroundImage = Image.FromFile(@"C:\Users\ting8\Source\Repos\Team08\Team08\image\001.jfif");
+            this.BackgroundImage = Properties.Resources.StartWinBackground;
         }
 
         private void uxCheck_Click(object sender, EventArgs e)
