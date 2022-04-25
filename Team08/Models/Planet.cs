@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Team08.Models
 {
-    class Planet
+    public class Planet
     {
         public int PlanetID;
         public int SolarSystemID;
@@ -17,7 +17,7 @@ namespace Team08.Models
         public Double YCoordinate;
         public Double DistanceFromEarth;
 
-        public Planet(int planetID, int solarSystemID, string planetName, double mass, double radius, double xCoordinate, double yCoordinate, double distanceFromEarth)
+        public Planet(int planetID, string planetName, double mass, double radius, double xCoordinate, double yCoordinate, double distanceFromEarth, int solarSystemID)
         {
             PlanetID = planetID;
             SolarSystemID = solarSystemID;

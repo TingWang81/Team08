@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="Controller.cs" />
     <Compile Include="IPersonRepository.cs" />
+    <Compile Include="IPlanetRepository.cs" />
     <Compile Include="ManagementWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +76,7 @@
     <Compile Include="Models\SolarSystem.cs" />
     <Compile Include="Models\SpaceShip.cs" />
     <Compile Include="SqlPersonRepository.cs" />
+    <Compile Include="SqlPlanetRepository.cs" />
     <Compile Include="StartWindows.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +85,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BookingWindows.resx">
+      <DependentUpon>BookingWindows.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CheckWindows.resx">
       <DependentUpon>CheckWindows.cs</DependentUpon>
     </EmbeddedResource>

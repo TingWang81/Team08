@@ -12,9 +12,11 @@ namespace Team08
 {
     public partial class BookingWindows : Form
     {
-        public BookingWindows()
+        private Controller controller;
+        public BookingWindows(Controller c, string planetName)
         {
             InitializeComponent();
+            this.controller = c;
         }
     }
 }

@@ -14,11 +14,11 @@ namespace Team08
 {
     public partial class ManagementWindow : Form
     {
-        private Controller controllerClass;
+        private Controller controller;
         public ManagementWindow(Controller c)
         {
             InitializeComponent();
-            this.controllerClass = c;
+            this.controller = c;
         }
 
         private void backButton_Click(object sender, EventArgs e)
@@ -29,11 +29,10 @@ namespace Team08
         private void custSearchBtn_Click(object sender, EventArgs e)
         {
             string[] fullName = this.custNameSearchBox.Text.Split(' ');
-            Person p = this.controllerClass.GetPerson(fullName[0], fullName[1]);
+            Person p = this.controller.GetPerson(fullName[0], fullName[1]);
             MessageBox.Show(
                 p.FirstName + " " + p.LastName + "\n" +
-                p.EmailAddress
-                );
+                p.EmailAddress);
         }
 
         private void rankCustByDistanceBtn_Click(object sender, EventArgs e)
