@@ -12,17 +12,19 @@ namespace Team08.Models
         public string PlanetName;
         public decimal Mass;
         public decimal Radius;
-        public decimal EclipticCoordinate;
+        public decimal Xcoordinate;
+        public decimal Ycoordinate;
         public decimal DistanceFromEarth;
         public int SolarSystemID;
 
-        public Planet(int planetID, string planetName, decimal mass, decimal radius, decimal eclipticCoordinate, decimal distanceFromEarth,int solarSystemID)
+        public Planet(int planetID, string planetName, decimal mass, decimal radius, decimal xCoordinate, decimal yCoordinate,decimal distanceFromEarth,int solarSystemID)
         {
             PlanetID = planetID;
             PlanetName = planetName;
             Mass = mass;
             Radius = radius;
-            EclipticCoordinate = eclipticCoordinate;
+            Xcoordinate = xCoordinate;
+            Ycoordinate = yCoordinate;
             DistanceFromEarth = distanceFromEarth;
             SolarSystemID = solarSystemID;
         }

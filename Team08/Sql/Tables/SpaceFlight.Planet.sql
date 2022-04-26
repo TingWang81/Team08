@@ -9,8 +9,8 @@ CREATE TABLE SpaceFlight.Planet
     PlanetName NVARCHAR(64) NOT NULL UNIQUE,
     Mass DECIMAL NOT NULL,
     Radius DECIMAL NOT NULL,
-    --XCoordinate FLOAT NOT NULL,
-    eclipticCoordinatee DECIMAL NOT NULL,
+    XCoordinate DECIMAL NOT NULL,
+    YCoordinate DECIMAL NOT NULL,
     DistanceFromEarth DECIMAL NOT NULL,
 
     SolarSystemID INT NOT NULL FOREIGN KEY

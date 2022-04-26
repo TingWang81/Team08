@@ -44,7 +44,8 @@ namespace Team08
             var planetnameOrdinal = reader.GetOrdinal("PlanetName");
             var planetmass = reader.GetOrdinal("Mass");
             var planetradius = reader.GetOrdinal("Radius");
-            var planetEcli = reader.GetOrdinal("eclipticCoordinatee");
+            var planetx = reader.GetOrdinal("XCoordinate");
+            var planety = reader.GetOrdinal("YCoordinate");
             var planetdis = reader.GetOrdinal("DistanceFromEarth");
             var planetSolo = reader.GetOrdinal("SolarSystemID");
   
@@ -57,7 +58,8 @@ namespace Team08
                reader.GetString(planetnameOrdinal),
                reader.GetDecimal(planetmass),
                reader.GetDecimal(planetradius),
-               reader.GetDecimal(planetEcli),
+               reader.GetDecimal(planetx),
+               reader.GetDecimal(planety),
                reader.GetDecimal(planetdis),
                reader.GetInt32(planetSolo));
 

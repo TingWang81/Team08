@@ -53,7 +53,7 @@ namespace Team08
         {
             string planetName = this.planetNameSearchBox.Text;
             Planet pl = this.controllerClass.GetPlanet(planetName);
-            groupBox1.Text = "The Planet Id is " + pl.PlanetID + "." + " It named " + pl.PlanetName + "." +"\n" +"The mass is " + pl.Mass + "," + " and the radius is " + pl.Radius + ", " + "and the eclipticCoordinate is " + pl.EclipticCoordinate + "." + "\n"
+            groupBox1.Text = "The Planet Id is " + pl.PlanetID + "." + " It named " + pl.PlanetName + "." +"\n" +"The mass is " + pl.Mass + "," + " and the radius is " + pl.Radius + ", " + "and the eclipticCoordinate is <" + pl.Xcoordinate + ", "+ pl.Ycoordinate + ">" + "." + "\n"
                 + "The distance from earth is " + pl.DistanceFromEarth + "." + "The soloarSystemId is " + pl.SolarSystemID + ".";
             //MessageBox.Show(
             //    "The Planet Id is " + pl.PlanetID + "." + " It named " + pl.PlanetName + "." + "The mass is " + pl.Mass + "," + " and the radius is " + pl.Radius + ", " + "and the eclipticCoordinate is " +pl.EclipticCoordinate +"." + "\n"
