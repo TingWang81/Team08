@@ -120,7 +120,16 @@
     <Content Include="image\02.jpg" />
     <Content Include="Resources\photo-1465101162946-4377e57745c3.jfif" />
     <Content Include="Sql\Procedures\SpaceFlight.GetPerson.sql" />
+    <Content Include="Sql\Procedures\SpaceFlight.GetPlanet.sql" />
+    <Content Include="Sql\Procedures\SpaceFlight.GetSpaceShip.sql" />
+    <Content Include="Sql\Procedures\SpaceFlight.RankPersonsByDistance.sql" />
+    <Content Include="Sql\Tables\SpaceFlight.Flight.sql" />
+    <Content Include="Sql\Tables\SpaceFlight.FlightPerson.sql" />
     <Content Include="Sql\Tables\SpaceFlight.Person.sql" />
+    <Content Include="Sql\Tables\SpaceFlight.Planet.sql" />
+    <Content Include="Sql\Tables\SpaceFlight.ShipType.sql" />
+    <Content Include="Sql\Tables\SpaceFlight.SolarSystem.sql" />
+    <Content Include="Sql\Tables\SpaceFlight.SpaceShip.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
