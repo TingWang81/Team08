@@ -9,6 +9,10 @@ namespace Team08
 {
     public interface IPlanetRepository
     {
+
         List<Planet> GetAllPlanets();
+
+        Planet GetPlanet(string name);
+
     }
 }

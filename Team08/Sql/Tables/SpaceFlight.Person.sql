@@ -1,4 +1,4 @@
-USE CIS560
+USE master
 GO
 
 CREATE TABLE SpaceFlight.Person

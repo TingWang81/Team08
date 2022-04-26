@@ -25,6 +25,7 @@ namespace Team08
             InitializeComponent();
             this.controller = c;
             setupDestinationButtons();
+            this.BackgroundImage = Properties.Resources.StartWinBackground;
         }
 
         private void uxCheck_Click(object sender, EventArgs e)

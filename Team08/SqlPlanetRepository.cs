@@ -11,7 +11,6 @@ namespace Team08
 {
     public class SqlPlanetRepository : IPlanetRepository
     {
-
         private readonly string connectionString;
 
         public SqlPlanetRepository(string connectionString)
@@ -39,6 +38,26 @@ namespace Team08
             }
         }
 
+        public Planet GetPlanet(string name)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                using (var command = new SqlCommand("SpaceFlight.GetPlanet", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("PlanetName", name);
+                    //command.Parameters.AddWithValue("FirstName", firstName);
+
+                    connection.Open();
+
+                    using (var reader = command.ExecuteReader())
+                        return TranslatePlanet(reader);
+
+                }
+            }
+        }
+
         /// <summary>
         /// Converts SqlDataReader to one Planet object.
         /// </summary>
@@ -61,11 +80,11 @@ namespace Team08
             return new Planet(
                reader.GetInt32(planetIDOrdinal),
                reader.GetString(PlanetNameOrdinal),
-               reader.GetFloat(MassOrdinal),
-               reader.GetFloat(RadiusOrdinal),
-               reader.GetFloat(XCoordinateOrdinal),
-               reader.GetFloat(YCoordinateOrdinal),
-               reader.GetFloat(DistanceFromEarthOrdinal),
+               reader.GetDecimal(MassOrdinal),
+               reader.GetDecimal(RadiusOrdinal),
+               reader.GetDecimal(XCoordinateOrdinal),
+               reader.GetDecimal(YCoordinateOrdinal),
+               reader.GetDecimal(DistanceFromEarthOrdinal),
                reader.GetInt32(SolarSystemIDOrdinal)) ;
         }
 
@@ -95,11 +114,11 @@ namespace Team08
                Planet p = new Planet(
                reader.GetInt32(planetIDOrdinal),
                reader.GetString(PlanetNameOrdinal),
-               reader.GetDouble(MassOrdinal),
-               reader.GetDouble(RadiusOrdinal),
-               reader.GetDouble(XCoordinateOrdinal),
-               reader.GetDouble(YCoordinateOrdinal),
-               reader.GetDouble(DistanceFromEarthOrdinal),
+               reader.GetDecimal(MassOrdinal),
+               reader.GetDecimal(RadiusOrdinal),
+               reader.GetDecimal(XCoordinateOrdinal),
+               reader.GetDecimal(YCoordinateOrdinal),
+               reader.GetDecimal(DistanceFromEarthOrdinal),
                reader.GetInt32(SolarSystemIDOrdinal));
 
                planets.Add(p);

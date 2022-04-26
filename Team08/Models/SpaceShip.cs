@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Team08.Models
 {
-    class SpaceShip
+    public class SpaceShip
     {
         public int ShipID;
         public string ShipName;
