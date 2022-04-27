@@ -13,18 +13,20 @@ namespace Team08.Models
         public int DeparturePlanetID;
         public int DestinationPlanetID;
         public DateTime DepartureDateTime;
-        public DateTime ArraivalDateTime;
-        public Double TicketPrice;
+        public DateTime ArrivalDateTime;
+        public double TicketPrice;
+        public string DestinationPlanetName;
 
-        public Flight(int flightID, int shipID, int departurePlanetID, int destinationPlanetID, DateTime departureDateTime, DateTime arraivalDateTime, double ticketPrice)
+        public Flight(int flightID, int shipID, int departurePlanetID, int destinationPlanetID, string departureDateTime, string arrivalDateTime, int ticketPrice, string destinationPlanetName)
         {
             FlightID = flightID;
             ShipID = shipID;
             DeparturePlanetID = departurePlanetID;
             DestinationPlanetID = destinationPlanetID;
-            DepartureDateTime = departureDateTime;
-            ArraivalDateTime = arraivalDateTime;
+            DepartureDateTime = DateTime.Parse(departureDateTime);
+            //ArrivalDateTime = DateTime.Parse("");
             TicketPrice = ticketPrice;
+            DestinationPlanetName = destinationPlanetName;
         }
     }
 }

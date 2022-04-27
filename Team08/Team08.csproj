@@ -46,14 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookingWindows.cs" />
-    <Compile Include="BookingWindows.Designer.cs">
-      <DependentUpon>BookingWindows.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CheckWindows.cs">
+    <Compile Include="SqlFlightRepository.cs" />
+    <Compile Include="Views\BookingWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CheckWindows.Designer.cs">
+    <Compile Include="Views\BookingWindow.Designer.cs">
+      <DependentUpon>BookingWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CheckWindows.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CheckWindows.Designer.cs">
       <DependentUpon>CheckWindows.cs</DependentUpon>
     </Compile>
     <Compile Include="Controller.cs" />
@@ -61,10 +64,10 @@
     <Compile Include="IPersonRepository.cs" />
     <Compile Include="IPlanetRepository.cs" />
     <Compile Include="IShipRepository.cs" />
-    <Compile Include="ManagementWindow.cs">
+    <Compile Include="Views\ManagementWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagementWindow.Designer.cs">
+    <Compile Include="Views\ManagementWindow.Designer.cs">
       <DependentUpon>ManagementWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Flight.cs" />
@@ -78,21 +81,21 @@
     <Compile Include="SqlPersonRepository.cs" />
     <Compile Include="SqlPlanetRepository.cs" />
     <Compile Include="SqlShipRepository.cs" />
-    <Compile Include="StartWindows.cs">
+    <Compile Include="Views\StartWindows.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StartWindows.Designer.cs">
+    <Compile Include="Views\StartWindows.Designer.cs">
       <DependentUpon>StartWindows.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="BookingWindows.resx">
-      <DependentUpon>BookingWindows.cs</DependentUpon>
+    <EmbeddedResource Include="Views\BookingWindow.resx">
+      <DependentUpon>BookingWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CheckWindows.resx">
+    <EmbeddedResource Include="Views\CheckWindows.resx">
       <DependentUpon>CheckWindows.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagementWindow.resx">
+    <EmbeddedResource Include="Views\ManagementWindow.resx">
       <DependentUpon>ManagementWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -105,7 +108,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="StartWindows.resx">
+    <EmbeddedResource Include="Views\StartWindows.resx">
       <DependentUpon>StartWindows.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -131,7 +134,13 @@
     <Content Include="Sql\Procedures\SpaceFlight.GetPlanet.sql" />
     <Content Include="Sql\Procedures\SpaceFlight.GetSpaceShip.sql" />
     <Content Include="Sql\Procedures\SpaceFlight.RankPersonsByDistance.sql" />
+    <Content Include="Sql\Tables\SpaceFlight.Flight.sql" />
+    <Content Include="Sql\Tables\SpaceFlight.FlightPerson.sql" />
     <Content Include="Sql\Tables\SpaceFlight.Person.sql" />
+    <Content Include="Sql\Tables\SpaceFlight.Planet.sql" />
+    <Content Include="Sql\Tables\SpaceFlight.ShipType.sql" />
+    <Content Include="Sql\Tables\SpaceFlight.SolarSystem.sql" />
+    <Content Include="Sql\Tables\SpaceFlight.SpaceShip.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

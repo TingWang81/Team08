@@ -35,21 +35,6 @@ namespace Team08
             this.Hide();
         }
 
-        //private void StartWindows_Load(object sender, EventArgs e)
-        //{
-        //    uxTimer.Start();
-        //}
-
-        //private void uxTimer_Tick(object sender, EventArgs e)
-        //{
-        //    uxlabel2.Text = (DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second).ToString();
-        //}
-
-        //private void uxExit_Click(object sender, EventArgs e)
-        //{
-        //    System.Environment.Exit(0);
-        //}
-
         private void management_button_Click(object sender, EventArgs e)
         {
             var mang_window = new ManagementWindow(this.controller);
@@ -58,13 +43,13 @@ namespace Team08
 
         private void destination_Planet_Click(object sender, EventArgs e)
         {
-            string buttonName = sender.ToString();
-            var bookingWindow = new BookingWindows(this.controller, "");
+            string planetName = ((Button)sender).Text;
+            var bookingWindow = new backBtn(this.controller, planetName);
             bookingWindow.Show();
         }
 
         /// <summary>
-        /// 
+        /// Creates layout and buttons for start screen. Each button represents a destination planet.
         /// </summary>
         private void setupDestinationButtons()
         {

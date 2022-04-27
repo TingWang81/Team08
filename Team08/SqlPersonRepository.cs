@@ -18,6 +18,12 @@ namespace Team08
             this.connectionString = connectionString;
         }
 
+        /// <summary>
+        /// Querries Person table from database to find person with first and last name.
+        /// </summary>
+        /// <param name="lastName"></param>
+        /// <param name="firstName"></param>
+        /// <returns></returns>
         public Person GetPerson(string lastName, string firstName)
         {
             using (var connection = new SqlConnection(connectionString))
@@ -56,6 +62,11 @@ namespace Team08
         //    }
         //}
 
+        /// <summary>
+        /// Converts sql reader into Person class.
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns></returns>
         private Person TranslatePerson(SqlDataReader reader)
         {
             var personIdOrdinal = reader.GetOrdinal("PersonId");

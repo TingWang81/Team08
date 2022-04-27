@@ -2,7 +2,7 @@ CREATE TABLE SpaceFlight.Flight
 (
     FlightID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY,
     DepartureDateTime NVARCHAR(64) NOT NULL,
-    ArrivalDateTime NVARCHAR(64) NOT NULL,
+    ArrivalDateTime NVARCHAR(64),
 	TicketPrice INT NOT NULL,
 
     ShipID INT NOT NULL FOREIGN KEY REFERENCES SpaceFlight.SpaceShip(ShipID),
