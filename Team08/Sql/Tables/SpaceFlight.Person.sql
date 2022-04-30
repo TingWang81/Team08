@@ -10,5 +10,4 @@ CREATE TABLE SpaceFlight.Person
 	EmailAddress NVARCHAR(128) NOT NULL,
     
     UNIQUE(EmailAddress),
-    
 );

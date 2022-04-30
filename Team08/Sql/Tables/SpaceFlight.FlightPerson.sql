@@ -1,3 +1,5 @@
+-- DROP TABLE SpaceFlight.FlightPerson
+
 CREATE TABLE SpaceFlight.FlightPerson
 (
     FlightID INT NOT NULL FOREIGN KEY REFERENCES SpaceFlight.Flight(FlightID), 

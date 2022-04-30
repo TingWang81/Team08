@@ -133,7 +133,9 @@
     <Content Include="Sql\Procedures\SpaceFlight.GetAllPlanets.sql" />
     <Content Include="Sql\Procedures\SpaceFlight.GetPerson.sql" />
     <Content Include="Sql\Procedures\SpaceFlight.GetPlanet.sql" />
+    <Content Include="Sql\Procedures\SpaceFlight.GetScheduledFlights.sql" />
     <Content Include="Sql\Procedures\SpaceFlight.GetSpaceShip.sql" />
+    <Content Include="Sql\Procedures\SpaceFlight.InsertPerson.sql" />
     <Content Include="Sql\Procedures\SpaceFlight.RankPersonsByDistance.sql" />
     <Content Include="Sql\Tables\SpaceFlight.Flight.sql" />
     <Content Include="Sql\Tables\SpaceFlight.FlightPerson.sql" />

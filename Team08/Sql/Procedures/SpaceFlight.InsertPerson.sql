@@ -3,3 +3,5 @@ AS
 
 INSERT SpaceFlight.Person(FirstName, LastName, EmailAddress)
 VALUES (@FirstName, @LastName, @Email)
+
+EXEC SpaceFlight.GetScheduledFlights @SolarSystemName = 'blah', @DestinationPlanetName = 'Venus', @DeparturePlanetID = 8
