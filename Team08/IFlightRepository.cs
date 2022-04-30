@@ -16,5 +16,11 @@ namespace Team08
         /// <param name="planetName"></param>
         /// <returns></returns>
         List<Flight> GetScheduledFlightsToPlanet(string solarSystemName, string planetName, int departurePlanetID);
+
+        /// <summary>
+        /// Inserts a new row in the flight table.
+        /// </summary>
+        /// <param name="f"></param>
+        void CreateFlight(Flight f);
     }
 }

@@ -61,6 +61,19 @@ namespace Team08
         //    return null;
         //}
 
+        /// <summary>
+        /// Updates a FlightPerson record in the database and Inserts new Person row if necessary.
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="email"></param>
+        public void BookFlight(string firstName, string lastName, string email)
+        {
+            this.personRepo.InsertPersonIfNonExistent(new Person(0, firstName, lastName, email));
+
+
+        }
+
         public SpaceShip GetSpaceShip(string name)
         {
             return this.spaceshipRepo.GetSpaceShip(name);

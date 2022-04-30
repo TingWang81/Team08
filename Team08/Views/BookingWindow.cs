@@ -13,29 +13,42 @@ namespace Team08
 {
     public partial class backBtn : Form
     {
-        Controller controller;
+        private Controller controller;
+        private List<Flight> flights;
+        private Dictionary<string, Flight> flightDict = new Dictionary<string, Flight>();
 
         public backBtn(Controller c, string planetName)
         {
             InitializeComponent();
             this.controller = c;
-            setupFlightButtons("blah", planetName);
+            this.flights = getFlights(planetName);
+            setupFlightButtons();
+        }
+
+        /// <summary>
+        /// Gets available flights from database with specified destination planet.
+        /// </summary>
+        /// <param name="solarSystem"></param>
+        /// <param name="planetName"></param>
+        /// <returns></returns>
+        private List<Flight> getFlights(string planetName)
+        {
+            return this.controller.GetScheduledFlightsToPlanet("blah", planetName);
         }
 
         /// <summary>
         /// Creates layout and buttons for booking window. Each button represents an available scheduled flight.
         /// </summary>
-        private void setupFlightButtons(string solarSystem, string planetName)
+        private void setupFlightButtons()
         {
-            List<Flight> flights = this.controller.GetScheduledFlightsToPlanet(solarSystem, planetName);
-
             int buttonWidth = 1000;
             int x = 50;
             int y = 50;
 
-            foreach (Flight flight in flights)
+            foreach (Flight flight in this.flights)
             {
                 Button b = new Button();
+                b.Name = flight.FlightID.ToString();
                 b.Font = new Font(b.Font.FontFamily, 16);
                 b.Width = 1000;
                 b.Height = 60;
@@ -55,12 +68,26 @@ namespace Team08
                 }
 
                 this.Controls.Add(b);
+                this.flightDict.Add(b.Name, flight);
             }
         }
 
+        /// <summary>
+        /// Opens booking window and eigther gathers info about person paying for flight or returns empty.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void schedule_flight_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Works");
+            Flight f = this.flightDict[((Button)sender).Name];
+
+            CheckWindows cw = new CheckWindows(f);
+            var dialog = cw.ShowDialog();
+            if(dialog == DialogResult.OK)
+            {
+                this.controller.BookFlight(cw.FirstName, cw.LastName, cw.Email);
+                MessageBox.Show("Booking Completed");
+            }
         }
     }
 }

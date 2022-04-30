@@ -10,5 +10,7 @@ namespace Team08
     public interface IPersonRepository
     {
         Person GetPerson(string lastName, string firstName);
+
+        void InsertPersonIfNonExistent(Person p);
     }
 }

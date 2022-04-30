@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using Team08.Models;
 
 namespace Team08
@@ -40,6 +41,41 @@ namespace Team08
 
                     using (var reader = command.ExecuteReader())
                         return TranslateFlights(reader);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Inserts a new row in the flight table.
+        /// </summary>
+        /// <param name="f"></param>
+        public void CreateFlight(Flight f)
+        {
+            // Save to database.
+            using (TransactionScope scope = new TransactionScope())
+            {
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    using (var command = new SqlCommand("SpaceFlight.CreateFlight", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.AddWithValue("DepartureDateTime", f.DepartureDateTime);
+                        command.Parameters.AddWithValue("ArrivalDateTime", f.ArrivalDateTime);
+                        command.Parameters.AddWithValue("TicketPrice", f.TicketPrice);
+                        command.Parameters.AddWithValue("ShipID", f.ShipID);
+                        command.Parameters.AddWithValue("DeparturePlanetID", f.DepartureDateTime);
+                        command.Parameters.AddWithValue("DestinationPlanetID", f.DestinationPlanetID);
+
+                        var fl = command.Parameters.Add("FlightID", SqlDbType.Int);
+                        fl.Direction = ParameterDirection.Output;
+
+                        connection.Open();
+
+                        command.ExecuteNonQuery();
+
+                        scope.Complete();
+                    }
                 }
             }
         }

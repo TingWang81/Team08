@@ -37,10 +37,10 @@
             // 
             this.management_button.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.management_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.management_button.Location = new System.Drawing.Point(1673, 900);
-            this.management_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.management_button.Location = new System.Drawing.Point(2092, 1149);
+            this.management_button.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.management_button.Name = "management_button";
-            this.management_button.Size = new System.Drawing.Size(133, 65);
+            this.management_button.Size = new System.Drawing.Size(177, 80);
             this.management_button.TabIndex = 0;
             this.management_button.Text = "Managers Window";
             this.management_button.UseVisualStyleBackColor = false;
@@ -48,12 +48,12 @@
             // 
             // StartWindows
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1898, 1024);
-            this.Controls.Add(this.management_button);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(2282, 1240);
+            this.Controls.Add(this.management_button);
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "StartWindows";
             this.Text = "Solar Flights";
             this.ResumeLayout(false);

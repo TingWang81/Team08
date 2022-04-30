@@ -1,53 +1,67 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using Team08.Models;
 
 
 namespace Team08
 {
     public partial class CheckWindows : Form
     {
-        public CheckWindows()
+        private Flight flight;
+        private string firstName;
+        private string lastName;
+        private string email;
+
+        public CheckWindows(Flight f)
         {
             InitializeComponent();
+            this.flight = f;
+            updateInfoBox();
         }
 
-        private void uxBack_Check_Click(object sender, EventArgs e)
+        public string FirstName { get => firstName; set => firstName = value; }
+        public string LastName { get => lastName; set => lastName = value; }
+        public string Email { get => email; set => email = value; }
+
+        /// <summary>
+        /// Displays basic flight info for employee to complete booking a flight.
+        /// </summary>
+        private void updateInfoBox()
         {
-            this.Hide();
-            StartWindows start = new StartWindows(new Controller());
-            start.ShowDialog();
+            string[] flightInfo = new string[5];
+            flightInfo[0] = "FLIGHT INFO:";
+            flightInfo[1] = "Flight " + this.flight.FlightID.ToString();
+            flightInfo[2] = "Departing Planet " + this.flight.DeparturePlanetID + " at " + this.flight.DepartureDateTime;
+            flightInfo[3] = "Arriving " + this.flight.DestinationPlanetName + " at " + this.flight.ArrivalDateTime;
+            flightInfo[4] = "Ticket Price $" + this.flight.TicketPrice;
+
+            this.infoTBox.Lines = flightInfo;
+        }
+
+        /// <summary>
+        /// Collects person info and tells parent form to expect results.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bookBtn_Click(object sender, EventArgs e)
+        {
+            this.FirstName = this.firstNameTBox.Text;
+            this.LastName = this.lastNameTBox.Text;
+            this.Email = this.emailTBox.Text;
+
+            this.DialogResult = DialogResult.OK;
             this.Close();
-            
         }
 
-        private void uxBooking_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Closes form and tells parent not to expect results.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cancelBtn_Click(object sender, EventArgs e)
         {
-
-
-
-
-
-            //connect to sql server
-            string connectionString;
-            SqlConnection cnn;
-            connectionString = @"Data Source=localhost;Initial Catalog=Team08;Integrated Security=True";//?
-            cnn = new SqlConnection(connectionString);
-
-            cnn.Open();
-            SqlCommand command;
-            SqlDataReader dataReader;
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            
-
-
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

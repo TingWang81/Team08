@@ -28,13 +28,6 @@ namespace Team08
             this.BackgroundImage = Properties.Resources.StartWinBackground;
         }
 
-        private void uxCheck_Click(object sender, EventArgs e)
-        {
-            CheckWindows cw = new CheckWindows();
-            cw.Show();
-            this.Hide();
-        }
-
         private void management_button_Click(object sender, EventArgs e)
         {
             var mang_window = new ManagementWindow(this.controller);
