@@ -37,7 +37,7 @@
             // 
             this.management_button.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.management_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.management_button.Location = new System.Drawing.Point(2092, 1149);
+            this.management_button.Location = new System.Drawing.Point(2069, 1128);
             this.management_button.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.management_button.Name = "management_button";
             this.management_button.Size = new System.Drawing.Size(177, 80);

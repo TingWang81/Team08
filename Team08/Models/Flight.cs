@@ -23,10 +23,18 @@ namespace Team08.Models
             ShipID = shipID;
             DeparturePlanetID = departurePlanetID;
             DestinationPlanetID = destinationPlanetID;
-            DepartureDateTime = DateTime.Parse(departureDateTime);
-            //ArrivalDateTime = DateTime.Parse("");
             TicketPrice = ticketPrice;
             DestinationPlanetName = destinationPlanetName;
+
+            if(departureDateTime != null)
+            {
+                DepartureDateTime = DateTime.Parse(departureDateTime);
+            }
+            
+            if(arrivalDateTime != null)
+            {
+                ArrivalDateTime = DateTime.Parse(arrivalDateTime);
+            }
         }
     }
 }

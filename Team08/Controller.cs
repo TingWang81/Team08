@@ -56,10 +56,23 @@ namespace Team08
             return this.flightRepo.GetScheduledFlightsToPlanet(solarSystemName, planetName, 8);
         }
 
-        //public List<Person> RankPersonsByDistance()
-        //{
-        //    return null;
-        //}
+        /// <summary>
+        /// Queries database for persons and executes stored procedure to rank them according to the distance they travelled.
+        /// </summary>
+        /// <returns></returns>
+        public List<Person> RankPersonsByDistance()
+        {
+            return this.personRepo.RankPersonByDistanceTravelled();
+        }
+
+        /// <summary>
+        /// Queries database for spaceships and ranks spaceships in use by total number of passengers to date.
+        /// </summary>
+        /// <returns></returns>
+        public List<SpaceShip>RankShipsByTotalNumPassengers()
+        {
+            return this.spaceshipRepo.RankShipByTotalPassengers();
+        }
 
         /// <summary>
         /// Updates a FlightPerson record in the database and Inserts new Person row if necessary.
@@ -70,8 +83,6 @@ namespace Team08
         public void BookFlight(string firstName, string lastName, string email)
         {
             this.personRepo.InsertPersonIfNonExistent(new Person(0, firstName, lastName, email));
-
-
         }
 
         public SpaceShip GetSpaceShip(string name)

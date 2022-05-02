@@ -10,5 +10,7 @@ namespace Team08
     public interface IShipRepository
     {
         SpaceShip GetSpaceShip(string name);
+
+        List<SpaceShip> RankShipByTotalPassengers();
     }
 }

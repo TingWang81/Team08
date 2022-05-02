@@ -11,6 +11,7 @@ namespace Team08.Models
         public int ShipID;
         public string ShipName;
         public int ShipTypeID;
+        private int totalNumPassengers;
 
         public SpaceShip(int shipID, string shipName, int shipTypeID)
         {
@@ -18,5 +19,7 @@ namespace Team08.Models
             ShipName = shipName;
             ShipTypeID = shipTypeID;
         }
+
+        public int TotalNumPassengers { get => totalNumPassengers; set => totalNumPassengers = value; }
     }
 }

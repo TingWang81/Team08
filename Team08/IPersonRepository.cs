@@ -12,5 +12,7 @@ namespace Team08
         Person GetPerson(string lastName, string firstName);
 
         void InsertPersonIfNonExistent(Person p);
+
+        List<Person> RankPersonByDistanceTravelled();
     }
 }

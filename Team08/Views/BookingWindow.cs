@@ -89,5 +89,15 @@ namespace Team08
                 MessageBox.Show("Booking Completed");
             }
         }
+
+        /// <summary>
+        /// Closes flight booking form and returns to destination start screen.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -82,6 +82,22 @@ namespace Team08
             }
         }
 
+        public List<Person> RankPersonByDistanceTravelled()
+        {
+            using (var connection = new SqlConnection(this.connectionString))
+            {
+                using (var command = new SqlCommand("SpaceFlight.RankPersonByDistanceTravelled", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    connection.Open();
+
+                    using (var reader = command.ExecuteReader())
+                        return TranslatePersons(reader);
+                }
+            }
+        }
+
         /// <summary>
         /// Inserts a row into the FlightPerson table indicating a flight has been booked by a customer.
         /// </summary>
@@ -112,6 +128,37 @@ namespace Team08
                reader.GetString(firstNameOrdinal),
                reader.GetString(lastNameOrdinal),
                reader.GetString(emailOrdinal));
+        }
+
+        /// <summary>
+        /// Converts sql data into list of persons.
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns></returns>
+        private List<Person> TranslatePersons(SqlDataReader reader)
+        {
+            var personIdOrdinal = reader.GetOrdinal("PersonId");
+            var firstNameOrdinal = reader.GetOrdinal("FirstName");
+            var lastNameOrdinal = reader.GetOrdinal("LastName");
+            var emailOrdinal = reader.GetOrdinal("EmailAddress");
+            var distanceOrdinal = reader.GetOrdinal("DistanceTravelled");
+
+            List<Person> persons = new List<Person>();
+
+            while(reader.Read())
+            {
+                Person p = new Person(
+                reader.GetInt32(personIdOrdinal),
+                reader.GetString(firstNameOrdinal),
+                reader.GetString(lastNameOrdinal),
+                reader.GetString(emailOrdinal));
+
+                p.DistanceTravelled = reader.GetDouble(distanceOrdinal);
+
+                persons.Add(p);
+            }
+
+            return persons;
         }
     }
 }

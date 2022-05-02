@@ -1,12 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Team08.Models;
 
@@ -61,9 +54,41 @@ namespace Team08
             //    );
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void rankCustByDistanceBtn_Click(object sender, EventArgs e)
         {
-            //List < Person > this.controllerClass
+            List<Person> persons = this.controller.RankPersonsByDistance();
+
+            string s = "";
+
+            foreach(Person p in persons){
+                s = s + "\n" + p.FirstName + " " + p.LastName + "    <" + p.EmailAddress + ">    " + p.DistanceTravelled + "\n";
+            }
+
+            MessageBox.Show(s, "Loyal Customer Rank:");
+        }
+
+        /// <summary>
+        /// Displays ranked spaceships by total number of passengers to date.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void rankShipCapacityBtn_Click(object sender, EventArgs e)
+        {
+            List<SpaceShip> spaceShips = this.controller.RankShipsByTotalNumPassengers();
+
+            string s = "";
+
+            foreach(SpaceShip ss in spaceShips)
+            {
+                s = s + "\n" + ss.ShipName + " has carried " + ss.TotalNumPassengers + " passengers to date.\n";
+            }
+
+            MessageBox.Show(s, "Ranked Ships By Total Number Of Passengers");
         }
     }
 }

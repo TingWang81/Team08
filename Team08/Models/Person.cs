@@ -12,6 +12,7 @@ namespace Team08.Models
         public string FirstName;
         public string LastName;
         public string EmailAddress;
+        private double distanceTravelled;
 
         public Person(int personID, string firstName, string lastName, string emailAddress)
         {
@@ -20,5 +21,7 @@ namespace Team08.Models
             LastName = lastName;
             EmailAddress = emailAddress;
         }
+
+        public double DistanceTravelled { get => distanceTravelled; set => distanceTravelled = value; }
     }
 }
