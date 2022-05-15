@@ -10,19 +10,29 @@ namespace Team08
 {
     public class Controller
     {
-        string connectionString;
-        IPersonRepository personRepo;
-        IPlanetRepository planetRepo;
-        IShipRepository spaceshipRepo;
-        IFlightRepository flightRepo;
+        private string connectionString;
+        private IPersonRepository personRepo;
+        private IPlanetRepository planetRepo;
+        private IShipRepository spaceshipRepo;
+        private IFlightRepository flightRepo;
+        private IFlightPersonRepository flightPersonRepo;
+        private IShipTypeRepository shipTypeRepo;
 
         public Controller()
         {
             this.connectionString = @"Server=(localdb)\MSSQLLocalDb;Database=CIS560;";
+
             this.personRepo = new SqlPersonRepository(this.connectionString);
             this.spaceshipRepo = new SqlShipRepository(this.connectionString);
             this.planetRepo = new SqlPlanetRepository(this.connectionString);
             this.flightRepo = new SqlFlightRepository(this.connectionString);
+            this.flightPersonRepo = new SqlFlightPersonRepository(this.connectionString);
+            this.shipTypeRepo = new SqlShipTypeRepository(this.connectionString);
+        }
+
+        public ShipType GetShipTypeByShipID(int shipID)
+        {
+            return this.shipTypeRepo.GetShipTypeByShipID(shipID);
         }
 
         /// <summary>
@@ -53,7 +63,7 @@ namespace Team08
         /// <returns></returns>
         public List<Flight> GetScheduledFlightsToPlanet(string solarSystemName, string planetName)
         {
-            return this.flightRepo.GetScheduledFlightsToPlanet(solarSystemName, planetName, 8);
+            return this.flightRepo.GetScheduledFlightsToPlanet(solarSystemName, planetName, 14);
         }
 
         /// <summary>
@@ -80,9 +90,41 @@ namespace Team08
         /// <param name="firstName"></param>
         /// <param name="lastName"></param>
         /// <param name="email"></param>
-        public void BookFlight(string firstName, string lastName, string email)
+        public void BookFlight(string firstName, string lastName, string email, Flight f)
         {
             this.personRepo.InsertPersonIfNonExistent(new Person(0, firstName, lastName, email));
+            Person p = this.personRepo.GetPerson(lastName, firstName);
+
+            FlightPerson fp = new FlightPerson(f.FlightID, p.PersonID);
+            this.flightPersonRepo.InsertFlightPerson(fp);
+        }
+
+        public List<FlightPerson> GetBookedFlightsFromPerson(int personID)
+        {
+            return this.flightPersonRepo.GetBookedFlightsGivenSpecifiedPerson(personID);
+        }
+
+        public void UpdatePerson(Person p)
+        {
+            this.personRepo.UpdatePerson(p);
+        }
+
+        /// <summary>
+        /// Trys to delete the booked flight of a given person by removing the corrosponding row in database.
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="email"></param>
+        /// <param name="f"></param>
+        public void DeleteFlightPerson(string firstName, string lastName, string email, Flight f)
+        {
+            Person p = new Person(0, firstName, lastName, email);
+            this.personRepo.InsertPersonIfNonExistent(p);
+            p = this.personRepo.GetPerson(p.LastName, p.FirstName);
+
+            FlightPerson fp = new FlightPerson(f.FlightID, p.PersonID);
+
+            this.flightPersonRepo.DeleteFlightPerson(fp);
         }
 
         public SpaceShip GetSpaceShip(string name)

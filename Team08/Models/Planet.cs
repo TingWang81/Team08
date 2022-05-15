@@ -14,10 +14,9 @@ namespace Team08.Models
         public decimal Radius;
         public decimal XCoordinate;
         public decimal YCoordinate;
-        public decimal DistanceFromEarth;
         public int SolarSystemID;
 
-        public Planet(int planetID, string planetName, decimal mass, decimal radius, decimal xCoordinate, decimal yCoordinate, decimal distanceFromEarth, int solarSystemID)
+        public Planet(int planetID, string planetName, decimal mass, decimal radius, decimal xCoordinate, decimal yCoordinate, int solarSystemID)
         {
             PlanetID = planetID;
             PlanetName = planetName;
@@ -25,7 +24,6 @@ namespace Team08.Models
             Radius = radius;
             XCoordinate = xCoordinate;
             YCoordinate = yCoordinate;
-            DistanceFromEarth = distanceFromEarth;
             SolarSystemID = solarSystemID;
         }
     }

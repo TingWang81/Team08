@@ -5,5 +5,3 @@ SELECT F.FlightID, F.TicketPrice, F.ShipID, F.DepartureDateTime, F.ArrivalDateTi
 FROM SpaceFlight.Flight AS F 
     INNER JOIN SpaceFlight.Planet AS P ON P.PlanetID = F.DestinationPlanetID
 WHERE F.ArrivalDateTime IS NULL AND F.DeparturePlanetID = @DeparturePlanetID AND P.PlanetName = @DestinationPlanetName
-
-EXEC SpaceFlight.GetScheduledFlights @SolarSystemName = 'blha', @DestinationPlanetName = 'Venus', @DeparturePlanetID = 8

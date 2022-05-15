@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Team08.Models
 {
-    class FlightPerson
+    public class FlightPerson
     {
         public int FlightID;
         public int PersonID;

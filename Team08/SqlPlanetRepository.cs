@@ -71,7 +71,6 @@ namespace Team08
             var RadiusOrdinal = reader.GetOrdinal("Radius");
             var XCoordinateOrdinal = reader.GetOrdinal("XCoordinate");
             var YCoordinateOrdinal = reader.GetOrdinal("YCoordinate");
-            var DistanceFromEarthOrdinal = reader.GetOrdinal("DistanceFromEarth");
             var SolarSystemIDOrdinal = reader.GetOrdinal("SolarSystemID");
 
             if (!reader.Read())
@@ -84,7 +83,6 @@ namespace Team08
                reader.GetDecimal(RadiusOrdinal),
                reader.GetDecimal(XCoordinateOrdinal),
                reader.GetDecimal(YCoordinateOrdinal),
-               reader.GetDecimal(DistanceFromEarthOrdinal),
                reader.GetInt32(SolarSystemIDOrdinal)) ;
         }
 
@@ -103,7 +101,6 @@ namespace Team08
             var RadiusOrdinal = reader.GetOrdinal("Radius");
             var XCoordinateOrdinal = reader.GetOrdinal("XCoordinate");
             var YCoordinateOrdinal = reader.GetOrdinal("YCoordinate");
-            var DistanceFromEarthOrdinal = reader.GetOrdinal("DistanceFromEarth");
             var SolarSystemIDOrdinal = reader.GetOrdinal("SolarSystemID");
 
             if (!reader.Read())
@@ -118,7 +115,6 @@ namespace Team08
                reader.GetDecimal(RadiusOrdinal),
                reader.GetDecimal(XCoordinateOrdinal),
                reader.GetDecimal(YCoordinateOrdinal),
-               reader.GetDecimal(DistanceFromEarthOrdinal),
                reader.GetInt32(SolarSystemIDOrdinal));
 
                planets.Add(p);

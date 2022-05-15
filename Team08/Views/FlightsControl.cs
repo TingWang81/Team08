@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,17 +11,20 @@ using Team08.Models;
 
 namespace Team08
 {
-    public partial class backBtn : Form
+    public partial class FlightsControl : UserControl
     {
         private Controller controller;
         private List<Flight> flights;
+        private StaticOuterWindow baseWindow;
         private Dictionary<string, Flight> flightDict = new Dictionary<string, Flight>();
 
-        public backBtn(Controller c, string planetName)
+        public FlightsControl(Controller c, StaticOuterWindow sow, string planetName)
         {
             InitializeComponent();
             this.controller = c;
             this.flights = getFlights(planetName);
+            this.baseWindow = sow;
+
             setupFlightButtons();
         }
 
@@ -81,28 +84,12 @@ namespace Team08
         {
             Flight f = this.flightDict[((Button)sender).Name];
 
-            CheckWindows cw = new CheckWindows(f);
-            var dialog = cw.ShowDialog();
-            if(dialog == DialogResult.OK)
-            {
-                this.controller.BookFlight(cw.FirstName, cw.LastName, cw.Email, f);
-                MessageBox.Show("Booking Completed");
-            }
-            if(dialog == DialogResult.Cancel)
-            {
-                this.controller.DeleteFlightPerson(cw.FirstName, cw.LastName, cw.Email, f);
-                MessageBox.Show("Booking Canceled");
-            }
+            this.baseWindow.ChangeBaseWindowDisplay(new BookingControl(this.controller, this.baseWindow, f));
         }
 
-        /// <summary>
-        /// Closes flight booking form and returns to destination start screen.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.baseWindow.ChangeBaseWindowDisplay(new DestinationPlanetControl(this.controller, this.baseWindow));
         }
     }
 }

@@ -183,11 +183,11 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.groupBox1.Location = new System.Drawing.Point(840, 143);
+            this.groupBox1.Location = new System.Drawing.Point(840, 164);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(373, 257);
+            this.groupBox1.Size = new System.Drawing.Size(675, 236);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             // 

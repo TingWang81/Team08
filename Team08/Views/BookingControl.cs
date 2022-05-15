@@ -1,21 +1,33 @@
 ﻿using System;
-using System.Windows.Forms;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Linq;
+using System.Text;
 using Team08.Models;
-
+using System.Windows.Forms;
 
 namespace Team08
 {
-    public partial class CheckWindows : Form
+    public partial class BookingControl : UserControl
     {
         private Flight flight;
+        private StaticOuterWindow baseWindow;
+        private Controller controller;
+
+
         private string firstName;
         private string lastName;
         private string email;
 
-        public CheckWindows(Flight f)
+        public BookingControl(Controller c, StaticOuterWindow baseWindow, Flight f)
         {
             InitializeComponent();
+            this.controller = c;
             this.flight = f;
+            this.baseWindow = baseWindow;
+
             updateInfoBox();
         }
 
@@ -28,11 +40,17 @@ namespace Team08
         /// </summary>
         private void updateInfoBox()
         {
-            string[] flightInfo = new string[5];
+            ShipType st = this.controller.GetShipTypeByShipID(this.flight.ShipID);
+
+            string[] flightInfo = new string[8];
             flightInfo[0] = "FLIGHT INFO:";
             flightInfo[1] = "Flight " + this.flight.FlightID.ToString();
             flightInfo[2] = "Departing Planet " + this.flight.DeparturePlanetID + " at " + this.flight.DepartureDateTime;
-            flightInfo[3] = "Ticket Price $" + this.flight.TicketPrice;
+            flightInfo[3] = "";
+            flightInfo[4] = "Ship Name: " + st.ShipName;
+            flightInfo[5] = "Ship Type: " + st.Name;
+            flightInfo[6] = "";
+            flightInfo[7] = "Ticket Price $" + this.flight.TicketPrice;
 
             this.infoTBox.Lines = flightInfo;
         }
@@ -48,8 +66,8 @@ namespace Team08
             this.LastName = this.lastNameTBox.Text;
             this.Email = this.emailTBox.Text;
 
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            this.controller.BookFlight(FirstName, LastName, Email, this.flight);
+            MessageBox.Show("Booking Completed");
         }
 
         /// <summary>
@@ -59,8 +77,7 @@ namespace Team08
         /// <param name="e"></param>
         private void cancelBtn_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.No;
-            this.Close();
+            this.baseWindow.ChangeBaseWindowDisplay(new FlightsControl(this.controller, this.baseWindow, this.flight.DestinationPlanetName));
         }
 
         /// <summary>
@@ -74,8 +91,8 @@ namespace Team08
             this.LastName = this.lastNameTBox.Text;
             this.Email = this.emailTBox.Text;
 
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
+            this.controller.DeleteFlightPerson(FirstName, LastName, Email, this.flight);
+            MessageBox.Show("Booking Canceled");
         }
     }
 }

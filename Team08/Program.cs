@@ -18,7 +18,7 @@ namespace Team08
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StartWindows(controllerClass));
+            Application.Run(new StaticOuterWindow(controllerClass));
         }
     }
 }

@@ -47,7 +47,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IShipTypeRepository.cs" />
+    <Compile Include="Views\BookingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\BookingControl.Designer.cs">
+      <DependentUpon>BookingControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DestinationPlanetControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\DestinationPlanetControl.Designer.cs">
+      <DependentUpon>DestinationPlanetControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FlightsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\FlightsControl.Designer.cs">
+      <DependentUpon>FlightsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IFlightPersonRepository.cs" />
+    <Compile Include="Views\ManagementControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ManagementControl.Designer.cs">
+      <DependentUpon>ManagementControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlFlightPersonRepository.cs" />
     <Compile Include="SqlFlightRepository.cs" />
+    <Compile Include="SqlShipTypeRepository.cs" />
+    <Compile Include="Views\StaticOuterWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\StaticOuterWindow.Designer.cs">
+      <DependentUpon>StaticOuterWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\BookingWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +124,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\UpdatePersonControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UpdatePersonControl.Designer.cs">
+      <DependentUpon>UpdatePersonControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\BookingControl.resx">
+      <DependentUpon>BookingControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DestinationPlanetControl.resx">
+      <DependentUpon>DestinationPlanetControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FlightsControl.resx">
+      <DependentUpon>FlightsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ManagementControl.resx">
+      <DependentUpon>ManagementControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\BookingWindow.resx">
       <DependentUpon>BookingWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +163,12 @@
     </Compile>
     <EmbeddedResource Include="Views\StartWindows.resx">
       <DependentUpon>StartWindows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\StaticOuterWindow.resx">
+      <DependentUpon>StaticOuterWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UpdatePersonControl.resx">
+      <DependentUpon>UpdatePersonControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

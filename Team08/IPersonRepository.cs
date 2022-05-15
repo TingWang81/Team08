@@ -14,5 +14,7 @@ namespace Team08
         void InsertPersonIfNonExistent(Person p);
 
         List<Person> RankPersonByDistanceTravelled();
+
+        void UpdatePerson(Person p);
     }
 }

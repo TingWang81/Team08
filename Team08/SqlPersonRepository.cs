@@ -82,6 +82,36 @@ namespace Team08
             }
         }
 
+        public void UpdatePerson(Person p)
+        {
+            // Save to database.
+            using (TransactionScope scope = new TransactionScope())
+            {
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    using (var command = new SqlCommand("SpaceFlight.UpdatePerson", connection))
+                    {
+
+                        if (GetPerson(p.LastName, p.FirstName) != null)
+                        {
+                            command.CommandType = CommandType.StoredProcedure;
+
+                            command.Parameters.AddWithValue("PersonID", p.PersonID);
+                            command.Parameters.AddWithValue("FirstName", p.FirstName);
+                            command.Parameters.AddWithValue("LastName", p.LastName);
+                            command.Parameters.AddWithValue("EmailAddress", p.EmailAddress);
+
+                            connection.Open();
+
+                            command.ExecuteNonQuery();
+
+                            scope.Complete();
+                        }
+                    }
+                }
+            }
+        }
+
         public List<Person> RankPersonByDistanceTravelled()
         {
             using (var connection = new SqlConnection(this.connectionString))
@@ -96,16 +126,6 @@ namespace Team08
                         return TranslatePersons(reader);
                 }
             }
-        }
-
-        /// <summary>
-        /// Inserts a row into the FlightPerson table indicating a flight has been booked by a customer.
-        /// </summary>
-        /// <param name="flightID"></param>
-        /// <param name="personID"></param>
-        public void InsertFlightPerson(int flightID, int personID)
-        {
-
         }
 
         /// <summary>
